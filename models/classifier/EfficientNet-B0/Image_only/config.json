@@ -1,0 +1,24 @@
+{
+  "backbone": "EfficientNet-B0",
+  "timm_id": "efficientnet_b0",
+  "method": "Image only",
+  "classes": [
+    "Healthy+Benign",
+    "OPMD+OCA"
+  ],
+  "img_size": 384,
+  "meta_dim": 9,
+  "dropout": 0.5,
+  "threshold": 0.5,
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "metadata_encoding": "../../metadata_encoding.json"
+}

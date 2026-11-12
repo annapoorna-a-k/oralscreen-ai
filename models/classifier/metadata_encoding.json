@@ -1,0 +1,47 @@
+{
+  "features": [
+    "m_age",
+    "m_sex=f",
+    "m_sex=m",
+    "m_smoking=no",
+    "m_smoking=yes",
+    "m_alcohol=no",
+    "m_alcohol=yes",
+    "m_betel=no",
+    "m_betel=yes"
+  ],
+  "columns": {
+    "age": "Age",
+    "sex": "Gender",
+    "smoking": "Smoking",
+    "alcohol": "Alcohol",
+    "betel": "Chewing_Betel_Quid"
+  },
+  "encoding": {
+    "numeric": {
+      "Age": {
+        "median": 50.0,
+        "min": 3.0,
+        "max": 85.0
+      }
+    },
+    "categorical": {
+      "Gender": [
+        "f",
+        "m"
+      ],
+      "Smoking": [
+        "no",
+        "yes"
+      ],
+      "Alcohol": [
+        "no",
+        "yes"
+      ],
+      "Chewing_Betel_Quid": [
+        "no",
+        "yes"
+      ]
+    }
+  }
+}
