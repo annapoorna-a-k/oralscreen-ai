@@ -258,7 +258,7 @@ plain-language report with clear next steps.</p>
 <div class="heroimg"><img src="{hero_img}" alt="Illustration: doctors examining an open mouth with magnifying glasses"></div></div>
 <div class="stats">
 <div class="stat"><b>3,000</b><span>annotated photos from 714 patients used to build the models</span></div>
-<div class="stat"><b>0.93</b><span>Dice overlap of the oral-cavity segmentation (validation)</span></div>
+<div class="stat"><b>0.94</b><span>Dice overlap of the oral-cavity segmentation (validation)</span></div>
 <div class="stat"><b>95%</b><span>of oral cancer images flagged as suspicious on the held-out test set</span></div>
 {privacy_stat}
 </div>
