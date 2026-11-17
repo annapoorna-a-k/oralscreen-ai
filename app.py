@@ -204,9 +204,9 @@ if out is not None:
                     st.markdown('<p class="note">No patient details were given.</p>', unsafe_allow_html=True)
         with g2:
             st.markdown('<div class="subhead">Report</div>', unsafe_allow_html=True)
-            src = ("✍️ Written by the language model " + out["source"] + " · passed the safety check"
-                   if out["source"] != "template" else "📋 Standard report (template)")
-            st.markdown(f'<span class="badge">{src}</span>', unsafe_allow_html=True)
+            if out["source"] != "template":
+                st.markdown(f'<span class="badge">Written by the language model {out["source"]} · passed the safety check</span>',
+                            unsafe_allow_html=True)
             with st.container(key="report"):
                 st.markdown(out["text"])
             if out["note"] and not out["note"].startswith("(accepted"):
@@ -219,7 +219,7 @@ if out is not None:
             rows = [("Image model probability (EfficientNet-B0, 384 px)", f"{res['p_image']:.3f}"),
                     ("Metadata-only probability (XGBoost)", f"{res['p_meta']:.3f}"),
                     ("Final probability (XGBoost stacking)", f"{res['p_final']:.3f}"),
-                    ("Relative attribution to the photo (|SHAP| share; not a % of the prediction)", f"{res['image_share']:.2f}"),
+                    ("Share of the explanation coming from the photo (SHAP)", f"{res['image_share']:.0%}"),
                     ("Oral cavity area in the photo", f"{seg['mask_area']:.1%}"),
                     ("Test-set performance of this model", "accuracy 0.785 · MCC 0.585 · AUC 0.854 · sensitivity 0.714 · specificity 0.870")]
             st.markdown("\n".join(["| Item | Value |", "|---|---|"] + [f"| {a} | {b} |" for a, b in rows]))
